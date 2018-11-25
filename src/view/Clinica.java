@@ -771,15 +771,11 @@ public class Clinica extends javax.swing.JFrame {
     }//GEN-LAST:event_nomePacienteKeyReleased
 
     private void btnEscolherArquivoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEscolherArquivoActionPerformed
-        int inicio = 0,fim = 0;
-        
         try{
             JFileChooser f = new JFileChooser();
             f.showSaveDialog(this);
             caminhoArquivo = f.getSelectedFile().getAbsolutePath();
-            inicio = caminhoArquivo.indexOf(".txt");
-            fim = caminhoArquivo.indexOf("",inicio);
-            if(caminhoArquivo.substring(inicio,fim).equals(".txt")){
+            if(caminhoArquivo.contains(".txt")){
                 validaArquivo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/icones/check.png")));
                 caminhoArquivo = f.getSelectedFile().getAbsolutePath();
             }
